@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles-2.css">
+    <link href="dist/hamburgers.css" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cardo&family=Inter&display=swap');
+    </style>
+
+    <title>Responsive Navbar</title>
+
+</head>
+
+<body>
+
+    <header class="header">
+
+        <nav class="header__navbar navbar">
+            <img class="navbar__logo" src="main-section/logo/IMAGE.svg" alt="logo">
+
+            <div class="navbar__socials">
+                <a class="social__icon" href="#">
+                    <img class="icon" src="main-section/icons/fb.svg" alt="icon">
+                </a>
+                <a class="social__icon" href="#">
+                    <img class="icon" src="main-section/icons/tw.svg" alt="icon">
+                </a>
+                <a class="social__icon" href="#">
+                    <img class="icon" src="main-section/icons/in.svg" alt="icon">
+                </a>
+            </div>
+
+            <ul class="navbar__menu">
+                <li class="menu__item">
+                    <a href="#" class="link">Home</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="link link-remote">About</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="link link-remoter">Pages</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="link link-closer">Contact us</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="link">
+                        <img src="main-section/icons/cart.svg" alt="buy">
+                    </a>
+                </li>
+            </ul>
+
+            <button class="navbar__btn btn" type="button">
+                <a class="btn__item" href="">Order Today</a>
+            </button>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+
+        <div class="main-section">
+            <div class="main__info">
+                <h5 class="main__title-1"><hr>Welcome To Pages!!!</h5>
+
+                <h1 class="main__title-2">Your Books From The Best Writer.</h1>
+
+                <p class="main__par">We believe that reading books are essential to a healthy culture. They’re where authors can connect with readers.</p>
+
+                <div class="main__btn">
+                    <button class="btn-1" type="button">
+                        <a class="btn__text-1" href="#">Order Today</a>
+                    </button>
+                    <button class="btn-2" type="button">
+                        <a class="btn__text-2" href="#">Read Free Demo</a>
+                    </button>
+                </div>
+
+                <div class="main__description">
+                    <ul class="description">
+                        <li class="description__title">
+                            <img src="main-section/icons/point.svg" alt="">
+                            <h2>Pages:</h2>
+                            <h3>250pages</h3>
+                        </li>
+                        <li class="description__title">
+                            <img src="main-section/icons/point.svg" alt="">
+                            <h2>Length:</h2>
+                            <h3>10 Hours</h3>
+                        </li> 
+                        <li class="description__title">
+                            <img src="main-section/icons/point.svg" alt="">
+                            <h2>Rating:</h2>
+                            <h3>4.5/5 (305 ratings)</h3>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="main__content">
+                <img src="main-section/book/IMAGE.png" alt="book-title">
+            </div>
+        </div>
+
+    </header>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.navbar__menu');
+        const navSocials = document.querySelector('.navbar__socials');
+        const navBtn = document.querySelector('.navbar__btn');
+
+        hamburger.addEventListener('click', mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navSocials.classList.toggle('active');
+            navBtn.classList.toggle('active');
+        }
+
+        const link = document.querySelectorAll('.link');
+        const icon = document.querySelectorAll('.icon');
+        const btnItem = document.querySelector('.btn__item');
+
+        link.forEach(n => n.addEventListener('click', closeMenu));
+        icon.forEach(n => n.addEventListener('click', closeMenu));
+        btnItem.forEach(n => n.addEventListener('click', closeMenu));
+
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            navSocials.classList.remove('active');
+            navBtn.classList.remove('active');
+        }
+    </script>
+
+</body>
+
+</html>
